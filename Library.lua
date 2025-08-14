@@ -1431,7 +1431,9 @@ do
     local function CreateBaseButton(Button)
         local widthScale = Button.Half and 0.5 or 1
         local widthOffset = Button.Half and -2 or -4
-
+        if Buton.Half == true then
+                print('true')
+            end
         local Outer = Library:Create('Frame', {
             BackgroundColor3 = Color3.new(0, 0, 0);
             BorderColor3 = Color3.new(0, 0, 0);
