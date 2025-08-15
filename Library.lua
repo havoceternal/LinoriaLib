@@ -2142,7 +2142,7 @@ do
         end);
 
         Slider:Display();
-        Groupbox:AddBlank(Info.BlankSize or 6);
+        Groupbox:AddBlank(Info.BlankSize or 3);
         Groupbox:Resize();
 
         Options[Idx] = Slider;
