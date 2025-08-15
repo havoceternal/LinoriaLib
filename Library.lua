@@ -1991,7 +1991,7 @@ do
 	local SliderOuter = Library:Create('Frame', {
 		BackgroundColor3 = Color3.new(0, 0, 0);
 		BorderColor3 = Color3.new(0, 0, 0);
-		Size = UDim2.new(0.2, -2, 0, 13);
+		Size = UDim2.new(0.5, -2, 0, 13);
 		ZIndex = 5;
 		Parent = Container;
 	});
@@ -2144,7 +2144,7 @@ do
 
 	Slider:Display();
 	Groupbox:AddBlank(Info.BlankSize or 6);
-	Groupbox:Resize();
+	--Groupbox:Resize();
 
 	Options[Idx] = Slider;
 
