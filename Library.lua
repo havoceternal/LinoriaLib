@@ -1994,7 +1994,7 @@ do
 		ZIndex = 5;
 		Parent = Container;
 	});
-
+	print('yep')
 	Library:AddToRegistry(SliderOuter, {
 		BorderColor3 = 'Black';
 	});
@@ -2149,6 +2149,7 @@ do
 
 	return Slider;
 end;
+
 
     function Funcs:AddDropdown(Idx, Info)
         if Info.SpecialType == 'Player' then
