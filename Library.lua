@@ -1966,7 +1966,7 @@ do
 		Min = Info.Min;
 		Max = Info.Max;
 		Rounding = Info.Rounding;
-		MaxSize = 232;
+		MaxSize = 114;
 		Type = 'Slider';
 		Callback = Info.Callback or function(Value) end;
 	};
@@ -1991,7 +1991,7 @@ do
 	local SliderOuter = Library:Create('Frame', {
 		BackgroundColor3 = Color3.new(0, 0, 0);
 		BorderColor3 = Color3.new(0, 0, 0);
-		Size = UDim2.new(0.5, 0, 0, 13);
+		Size = UDim2.new(0.5, -2, 0, 13);
 		ZIndex = 5;
 		Parent = Container;
 	});
