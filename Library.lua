@@ -688,7 +688,8 @@ do
 
             Library:Create('UIListLayout', {
                 Name = 'Layout',
-                FillDirection = Enum.FillDirection.Vertical;
+                FillDirection = Enum.FillDirection.Horizontal;
+				Wraps = true;
                 SortOrder = Enum.SortOrder.LayoutOrder;
                 Parent = ContextMenu.Inner;
             });
@@ -3246,20 +3247,11 @@ function Library:CreateWindow(...)
                 Parent = BoxInner;
             });
 
-			if Info.Wraps then 
-				Library:Create('UIListLayout', {
-                	FillDirection = Enum.FillDirection.Horziontal;
-                	SortOrder = Enum.SortOrder.LayoutOrder;
-					Wraps = true;
-               	 	Parent = Container;
-        	    });
-			else
-				Library:Create('UIListLayout', {
-                	FillDirection = Enum.FillDirection.Vertical;
-                	SortOrder = Enum.SortOrder.LayoutOrder;
-               	 	Parent = Container;
-        	    });
-			end
+			Library:Create('UIListLayout', {
+				FillDirection = Enum.FillDirection.Vertical;
+				SortOrder = Enum.SortOrder.LayoutOrder;
+				Parent = Container;
+			});
             
 
             function Groupbox:Resize()
@@ -3285,12 +3277,12 @@ function Library:CreateWindow(...)
             return Groupbox;
         end;
 
-        function Tab:AddLeftGroupbox(Name, Wraps)
-            return Tab:AddGroupbox({ Side = 1; Name = Name; Wraps = Wraps or false; });
+        function Tab:AddLeftGroupbox(Name)
+            return Tab:AddGroupbox({ Side = 1; Name = Name; });
         end;
 
-        function Tab:AddRightGroupbox(Name, Wraps)
-            return Tab:AddGroupbox({ Side = 2; Name = Name; Wraps = Wraps or false; });
+        function Tab:AddRightGroupbox(Name)
+            return Tab:AddGroupbox({ Side = 2; Name = Name; });
         end;
 
         function Tab:AddTabbox(Info)
