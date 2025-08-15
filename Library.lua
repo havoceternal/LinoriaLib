@@ -3246,11 +3246,21 @@ function Library:CreateWindow(...)
                 Parent = BoxInner;
             });
 
-            Library:Create('UIListLayout', {
-                FillDirection = Enum.FillDirection.Vertical;
-                SortOrder = Enum.SortOrder.LayoutOrder;
-                Parent = Container;
-            });
+			if Info.Wraps then 
+				Library:Create('UIListLayout', {
+                	FillDirection = Enum.FillDirection.Horziontal;
+                	SortOrder = Enum.SortOrder.LayoutOrder;
+					Wraps = true;
+               	 	Parent = Container;
+        	    });
+			else
+				Library:Create('UIListLayout', {
+                	FillDirection = Enum.FillDirection.Vertical;
+                	SortOrder = Enum.SortOrder.LayoutOrder;
+               	 	Parent = Container;
+        	    });
+			end
+            
 
             function Groupbox:Resize()
                 local Size = 0;
@@ -3275,12 +3285,12 @@ function Library:CreateWindow(...)
             return Groupbox;
         end;
 
-        function Tab:AddLeftGroupbox(Name)
-            return Tab:AddGroupbox({ Side = 1; Name = Name; });
+        function Tab:AddLeftGroupbox(Name, Wraps)
+            return Tab:AddGroupbox({ Side = 1; Name = Name; Wraps = Wraps or false; });
         end;
 
-        function Tab:AddRightGroupbox(Name)
-            return Tab:AddGroupbox({ Side = 2; Name = Name; });
+        function Tab:AddRightGroupbox(Name, Wraps)
+            return Tab:AddGroupbox({ Side = 2; Name = Name; Wraps = Wraps or false; });
         end;
 
         function Tab:AddTabbox(Info)
